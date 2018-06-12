@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+
+<style>
+	/* Adaptive nav*/
+
+	.navbar-toggle{
+		display: none;
+		width: 45px;
+		height: 35px;
+		position: relative;
+		cursor: pointer;
+	}
+
+	.navbar-toggle span{
+		display: block;
+		position: absolute;
+		height: 7px;
+		width: 100%;
+		background: #044771;
+		border-radius: 9px;
+		left: 0;
+		transform: rotate(0);
+		transition: .25s ease-in-out;
+	}
+
+	.navbar-toggle span:nth-child(1){
+		top: 0;
+	}
+
+	.navbar-toggle span:nth-child(2),
+	.navbar-toggle span:nth-child(3){
+		top: 13px;
+	}
+
+	.navbar-toggle span:nth-child(4){
+		top: 26px;
+	}
+
+
+	.menu-open .navbar-toggle span:nth-child(1){
+		top: 18px;
+		width: 0%;
+		left: 50%;
+	}
+	.menu-open .navbar-toggle span:nth-child(2){
+		transform: rotate(45deg);
+	}
+	.menu-open .navbar-toggle span:nth-child(3){
+		transform: rotate(-45deg);
+	}
+	.menu-open .navbar-toggle span:nth-child(4){
+		top: 18px;
+		width: 0%;
+		left: 50%;
+	}
+	nav{
+		position: relative;
+	}/*End of adaptive nav*/
+
+</style>
+
+<body>
+	<nav id="top-nav">
+		<div class="navbar-toggle">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span> 
+			<span class="icon-bar"></span> 
+		</div>
+		<ul class="menu__list">
+			<li><a href="javascript:;">О фонде</a></li>
+			<li><a href="javascript:;">Наша работа</a></li>
+			<li><a href="javascript:;">Как помочь</a></li>
+		</ul>
+
+	</nav>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>
+
+	<script>
+		
+		$(document).ready(function() {
+
+			$(".navbar-toggle").click(function () {
+				$("nav").toggleClass("menu-open");
+				$(".menu__list").slideToggle();
+			});
+		});
+		
+	</script>
+</body>
+</html>
